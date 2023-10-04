@@ -27,11 +27,14 @@ public class ComputerAppl {
         System.out.println("=====================Homework_Task1========================");
 
         double totalHoursLaptop = getTotalHoursLaptop(shop);
-        double totalHoursSmart = getTotalHoursSmart(shop);
+        //double totalHoursSmart = getTotalHoursSmart(shop);
         System.out.println(totalHoursLaptop);
-        System.out.println(totalHoursSmart);
+        // System.out.println(totalHoursSmart);
 
-        System.out.println(totalHoursLaptop + totalHoursSmart);
+        System.out.println(totalHoursLaptop );
+
+        System.out.println("===================Task2==================");
+        System.out.println("Total SSD Laptop is:"+getTotalSSDCapacityLaptop(shop));
 
     }
 
@@ -77,6 +80,18 @@ public class ComputerAppl {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != null) {
                 res += arr[i].getSsd();
+            }
+        }
+        return res;
+    }
+    public static int getTotalSSDCapacityLaptop(Computer[] arr) {
+        int res = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null ) {
+                if (arr[i]instanceof Laptop){
+                    res += ((Laptop)arr[i]).getSsd();
+                }
+
             }
         }
         return res;
